@@ -38,4 +38,31 @@ print(np_nums9.base)
 
 print(np_nums3, np_nums3.shape, "\n", np_nums4, np_nums4.shape)
 
-np
+np_nums10 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+np_nums11 = np_nums10.reshape(4, 3)
+np_nums12 = np_nums10.reshape(2, 2, 3)
+np_nums13 = np_nums10.reshape(2, 3, -1)
+np_nums14 = np_nums13.reshape(-1)
+
+print(np_nums11)
+print(np_nums11.ndim)
+print(np_nums12)
+print(np_nums12.ndim)
+print(np_nums13)
+print(np_nums13.ndim)
+print(np_nums14)
+print(np_nums14.ndim)
+
+for i in np_nums12:
+    print(i)
+
+for i in np_nums12:
+    for j in i:
+        for k in j:
+            print(k)
+
+for i in np.nditer(np_nums12, flags=['buffered'], op_dtypes=['S']):
+    print(i)
+
+for idx, e in np.ndenumerate(np_nums10):
+    print(idx, e)
