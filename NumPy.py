@@ -66,3 +66,79 @@ for i in np.nditer(np_nums12, flags=['buffered'], op_dtypes=['S']):
 
 for idx, e in np.ndenumerate(np_nums10):
     print(idx, e)
+
+a = np.array([[1, 2],
+              [3, 4]])
+b = np.array([[5, 6],
+              [7, 8]])
+
+c = np.concatenate((a, b), axis=0)
+print(c)
+print(c.ndim, "\n")
+
+d = np.concatenate((a, b), axis=1)
+print(d)
+print(d.ndim, "\n")
+
+e = np.concatenate((a, b), axis=None)
+print(e)
+print(e.ndim, "\n")
+
+f = np.stack((a, b))
+print(f)
+print(f.ndim, "\n")
+
+g = np.vstack((a, b))
+print(g)
+print(g.ndim, "\n")
+
+h = np.hstack((a, b))
+print(h)
+print(h.ndim, "\n")
+
+i = np.dstack((a, b))
+print(i)
+print(i.ndim, "\n")
+
+arr1 = np.array([1, 2, 3, 4, 5, 6])
+
+arr2 = np.array_split(arr1, 3)
+print(arr2, "\n")
+
+arr3 = np.array_split(arr1, 4)
+print(arr3, "\n")
+
+arr4 = np.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])
+arr5 = np.array_split(arr4, 3)
+print(arr5, "\n")
+
+arr6 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]])
+
+arr7 = np.array_split(arr6, 3, axis=1)
+print(arr7, "\n")
+
+arr8 = np.hsplit(arr6, 3)
+print(arr8)
+
+arr9 = np.vsplit(arr6, 3)
+print(arr9)
+
+
+arr10 = np.array([[[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]]])
+arr11 = np.dsplit(arr10, 3)
+print(arr11)
+print(arr11[0].ndim)
+
+j = np.where(arr1 == 4)
+print(j)
+
+arr12 = np.array([6, 7, 8, 9])
+k = np.searchsorted(arr12, 7)
+print(k)
+
+l = np.searchsorted(arr12, 7, side='right')
+print(l)
+
+arr13 = np.array([2, 4, 6, 8])
+m = np.searchsorted(arr13, [1, 3, 5, 7])
+print(m)
