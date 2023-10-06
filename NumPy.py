@@ -142,3 +142,16 @@ print(l)
 arr13 = np.array([2, 4, 6, 8])
 m = np.searchsorted(arr13, [1, 3, 5, 7])
 print(m)
+
+arr14 = np.array([3, 46, 32, 1, 5])
+print(np.sort(arr14))
+print(arr14)
+
+arr15 = np.array(["banana", "cherry", "apple", "watermelon"])
+print(np.sort(arr15))
+print(arr15)
+
+arr16 = np.array([1, 2, 3, 4, 5, 6, 7])
+filter_arr16 = arr16 % 2 == 0
+filtered_arr16 = arr16[filter_arr16]
+print(filtered_arr16)
